@@ -43,3 +43,7 @@ def test_a_sentence_longer_than_five_words_with_punctuation():
 def test_a_sentence_longer_then_five_words_with_no_punctuation():
     result = make_snippet('There is no punctuation in this sentence which I am testing')
     assert result == 'There is no punctuation in...'
+
+def test_an_empty_string_input():
+    result = make_snippet('')
+    with 
