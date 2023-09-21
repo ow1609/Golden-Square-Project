@@ -19,11 +19,15 @@ Else:
     return result
 """
 
-def make_snippet(str):
-    list_of_entire_string = str.split()
+def make_snippet(string):
+    if type(string) is not str:
+        raise Exception("Incorrect input, string input required.")
+
+    
+    list_of_entire_string = string.split()
 
     if len(list_of_entire_string) <= 5:
-        return str
+        return string
     else:
         list_of_first_five_words = list_of_entire_string[0:5]
         string_of_first_five_words = ' '.join(list_of_first_five_words)
