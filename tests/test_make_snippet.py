@@ -17,7 +17,7 @@
 # Edge cases:
 
 
-# make_snippet(123) => Error message int passed but expecting str
+# make_snippet(123) => "Incorrect input, string input required."
 import pytest 
 from lib.make_snippet import make_snippet
 
