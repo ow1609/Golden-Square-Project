@@ -11,7 +11,7 @@
 #     The estimate will be returned in an f string. 
 
     # If the user inputs a non-integer value
-    # the program continues to ask for an integer
+    # the program raises an error
 
 
 # Input / Output Diagram:
