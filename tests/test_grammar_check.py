@@ -213,11 +213,18 @@ It returns False
 """
 # grammar_check('Dinosaurs are extincT') => False
 
+"""
+Given a non-string argument
+It raises an Exception 
+"""
+
+# grammar_check(25) => 'Incorrect input, string input required.'
+
 
 
 # CHECKING FIRST CHAR ONLY
 
-
+import pytest
 
 from lib.grammar_check import *
 
@@ -329,3 +336,10 @@ def test_first_char_is_upper_letter_and_last_char_is_upper_letter():
     result = grammar_check('Dinosaurs are extincT')
     assert result == False
 
+
+def test_if_given_a_non_string_argument_for_example_an_integer():
+    with pytest.raises(Exception) as e:
+        grammar_check(25)
+    error_message = str(e.value)
+    assert error_message == 'Incorrect input, string input required.'
+    

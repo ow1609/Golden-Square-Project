@@ -25,7 +25,9 @@ if first char is capital and last char is
 """
 
 def grammar_check(sentence):
-    if (sentence[0].isdigit()) or \
+    if type(sentence) is not str:
+        raise Exception('Incorrect input, string input required.')
+    elif (sentence[0].isdigit()) or \
         (sentence[0].isupper()) and \
         (sentence[-1] in '.?!'):
         return True
