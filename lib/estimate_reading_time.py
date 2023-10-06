@@ -22,10 +22,10 @@ def estimate_reading_time(word_count):
     elif word_count == 0:
         return 'Estimated reading time: 0 minutes'
     
-    elif word_count in range(1, 201):
+    elif word_count <= 200:
         return 'Estimated reading time: 1 minute'
     
-    elif word_count >= 201:
+    elif word_count > 200:
         total_mins_rounded_up = math.ceil(word_count/200)
         if total_mins_rounded_up <= 60:
             return f'Estimated reading time: {total_mins_rounded_up} minutes'
@@ -33,20 +33,7 @@ def estimate_reading_time(word_count):
             hours = total_mins_rounded_up//60
             minutes = math.ceil(total_mins_rounded_up % 60)
 
-            if minutes == 1:
-                str_mins = 'minute'
-            else:
-                str_mins = 'minutes'
-
-            if hours == 1:
-                str_hour = 'hour'
-            else:
-                str_hour = 'hours'
-
-            
+            str_mins = 'minute' if minutes == 1 else 'minutes'
+            str_hour = 'hour' if hours == 1 else 'hours'
 
             return f'Estimated reading time: {hours} {str_hour} and {minutes} {str_mins}'
-    
-
-    
-    
